@@ -230,7 +230,7 @@ export default function HomePage() {
               from your graduation date. Color-coded urgency. No login required.
             </p>
             <Link
-              href="/advisor"
+              href="/timeline"
               className="inline-block px-7 py-3.5 rounded-xl bg-[#22C55E] text-[#080D1A] font-bold text-base hover:bg-[#4ADE80] transition-colors shadow-lg shadow-[#22C55E]/20"
             >
               Calculate my OPT timeline →

@@ -5,9 +5,10 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Home" },
   { href: "/news", label: "News" },
+  { href: "/timeline", label: "OPT Timeline" },
   { href: "/advisor", label: "AI Advisor" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Nav() {
@@ -18,7 +19,10 @@ export default function Nav() {
     <header className="sticky top-0 z-50 border-b border-white/[0.08] bg-[#080D1A]/90 backdrop-blur-md">
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Wordmark */}
-        <Link href="/" className="opt-brand flex items-center gap-0.5 text-xl font-bold tracking-tight select-none">
+        <Link
+          href="/"
+          className="opt-brand flex items-center gap-0 text-xl font-bold tracking-tight select-none"
+        >
           <span className="opt">OPT</span>
           <span className="text-[#F8FAFC]">ionality</span>
         </Link>
@@ -29,8 +33,8 @@ export default function Nav() {
             <Link
               key={href}
               href={href}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                pathname === href
+              className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+                pathname === href || pathname.startsWith(href + "/")
                   ? "bg-[#22C55E]/10 text-[#22C55E]"
                   : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-white/[0.05]"
               }`}
@@ -41,12 +45,12 @@ export default function Nav() {
         </div>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:block">
           <Link
             href="/#waitlist"
             className="px-4 py-2 rounded-lg bg-[#22C55E] text-[#080D1A] text-sm font-semibold hover:bg-[#4ADE80] transition-colors"
           >
-            Join the waitlist
+            Join waitlist
           </Link>
         </div>
 
@@ -75,7 +79,7 @@ export default function Nav() {
               href={href}
               onClick={() => setOpen(false)}
               className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                pathname === href
+                pathname === href || pathname.startsWith(href + "/")
                   ? "bg-[#22C55E]/10 text-[#22C55E]"
                   : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-white/[0.05]"
               }`}
@@ -89,7 +93,7 @@ export default function Nav() {
               onClick={() => setOpen(false)}
               className="block w-full text-center px-4 py-2.5 rounded-lg bg-[#22C55E] text-[#080D1A] text-sm font-semibold hover:bg-[#4ADE80] transition-colors"
             >
-              Join the waitlist
+              Join waitlist
             </Link>
           </div>
         </div>
