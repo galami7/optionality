@@ -109,13 +109,13 @@ export default function AdvisorChat() {
         {/* Suggested questions — shown before first user message */}
         {messages.length === 1 && (
           <div className="mt-2">
-            <p className="text-xs text-[#475569] mb-3 font-medium uppercase tracking-wide">Common questions</p>
+            <p className="text-xs text-[#504133] mb-3 font-medium uppercase tracking-wide">Common questions</p>
             <div className="flex flex-wrap gap-2">
               {suggestedQuestions.map((q) => (
                 <button
                   key={q}
                   onClick={() => handleSuggest(q)}
-                  className="px-3 py-2 rounded-lg border border-white/[0.08] bg-[#0F1729] text-xs text-[#94A3B8] hover:border-[#22C55E]/30 hover:text-[#F8FAFC] hover:bg-[#22C55E]/5 transition-all text-left"
+                  className="px-3 py-2 rounded-lg border border-white/[0.08] bg-[#161109] text-xs text-[#9E8B71] hover:border-[#C9A96E]/30 hover:text-[#EDE0CC] hover:bg-[#C9A96E]/5 transition-all text-left"
                 >
                   {q}
                 </button>
@@ -130,14 +130,14 @@ export default function AdvisorChat() {
 
         {isTyping && (
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-full bg-[#22C55E]/15 border border-[#22C55E]/30 flex items-center justify-center text-sm flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-[#C9A96E]/15 border border-[#C9A96E]/30 flex items-center justify-center text-sm flex-shrink-0">
               🤖
             </div>
             <div className="chat-bubble-ai rounded-2xl rounded-tl-sm px-4 py-3">
               <div className="flex gap-1 items-center h-5">
-                <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-bounce" style={{ animationDelay: "0ms" }} />
-                <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-bounce" style={{ animationDelay: "150ms" }} />
-                <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-bounce" style={{ animationDelay: "300ms" }} />
+                <span className="w-2 h-2 rounded-full bg-[#C9A96E] animate-bounce" style={{ animationDelay: "0ms" }} />
+                <span className="w-2 h-2 rounded-full bg-[#C9A96E] animate-bounce" style={{ animationDelay: "150ms" }} />
+                <span className="w-2 h-2 rounded-full bg-[#C9A96E] animate-bounce" style={{ animationDelay: "300ms" }} />
               </div>
             </div>
           </div>
@@ -156,19 +156,19 @@ export default function AdvisorChat() {
             onKeyDown={handleKeyDown}
             placeholder="Ask anything about OPT, STEM extension, self-employment on a visa…"
             rows={1}
-            className="flex-1 resize-none px-4 py-3 rounded-xl bg-[#0F1729] border border-white/[0.12] text-[#F8FAFC] placeholder-[#475569] text-sm focus:outline-none focus:border-[#22C55E]/50 focus:ring-1 focus:ring-[#22C55E]/30 max-h-36 overflow-y-auto"
+            className="flex-1 resize-none px-4 py-3 rounded-xl bg-[#161109] border border-white/[0.12] text-[#EDE0CC] placeholder-[#504133] text-sm focus:outline-none focus:border-[#C9A96E]/50 focus:ring-1 focus:ring-[#C9A96E]/30 max-h-36 overflow-y-auto"
             style={{ minHeight: "48px" }}
           />
           <button
             type="submit"
             disabled={!input.trim() || isTyping}
-            className="px-5 py-3 rounded-xl bg-[#22C55E] text-[#080D1A] font-semibold text-sm hover:bg-[#4ADE80] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0 h-12"
+            className="px-5 py-3 rounded-xl bg-[#C9A96E] text-[#0C0A07] font-semibold text-sm hover:bg-[#D4B882] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0 h-12"
           >
             Send
           </button>
         </form>
-        <p className="text-xs text-[#475569] mt-2 text-center">
-          Press <kbd className="px-1.5 py-0.5 rounded bg-[#0F1729] border border-white/[0.08] text-[#64748B] text-xs">Enter</kbd> to send · <kbd className="px-1.5 py-0.5 rounded bg-[#0F1729] border border-white/[0.08] text-[#64748B] text-xs">Shift+Enter</kbd> for new line
+        <p className="text-xs text-[#504133] mt-2 text-center">
+          Press <kbd className="px-1.5 py-0.5 rounded bg-[#161109] border border-white/[0.08] text-[#6E5E48] text-xs">Enter</kbd> to send · <kbd className="px-1.5 py-0.5 rounded bg-[#161109] border border-white/[0.08] text-[#6E5E48] text-xs">Shift+Enter</kbd> for new line
         </p>
       </div>
     </div>
@@ -200,8 +200,8 @@ function MessageBubble({ message }: { message: Message }) {
       <div
         className={`w-8 h-8 rounded-full flex items-center justify-center text-sm flex-shrink-0 ${
           isUser
-            ? "bg-[#162040] border border-white/[0.12] text-[#94A3B8]"
-            : "bg-[#22C55E]/15 border border-[#22C55E]/30"
+            ? "bg-[#1E1812] border border-white/[0.12] text-[#9E8B71]"
+            : "bg-[#C9A96E]/15 border border-[#C9A96E]/30"
         }`}
       >
         {isUser ? "👤" : "🤖"}
@@ -218,7 +218,7 @@ function MessageBubble({ message }: { message: Message }) {
         >
           {message.content}
         </div>
-        <span className="text-xs text-[#475569] px-1">{formatTime(message.timestamp)}</span>
+        <span className="text-xs text-[#504133] px-1">{formatTime(message.timestamp)}</span>
       </div>
     </div>
   );

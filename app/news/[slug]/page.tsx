@@ -70,12 +70,12 @@ export default async function ArticlePage({ params }: Props) {
       <div className="px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="mx-auto max-w-3xl">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-[#64748B] mb-10">
-            <Link href="/" className="hover:text-[#22C55E] transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#6E5E48] mb-10">
+            <Link href="/" className="hover:text-[#C9A96E] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/news" className="hover:text-[#22C55E] transition-colors">News</Link>
+            <Link href="/news" className="hover:text-[#C9A96E] transition-colors">News</Link>
             <span>/</span>
-            <span className="text-[#94A3B8] truncate max-w-xs">{post.title}</span>
+            <span className="text-[#9E8B71] truncate max-w-xs">{post.title}</span>
           </nav>
 
           {/* Article header */}
@@ -84,20 +84,20 @@ export default async function ArticlePage({ params }: Props) {
               <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${categoryColors[post.category]}`}>
                 {post.category}
               </span>
-              <span className="text-[#475569] text-xs">{post.readingTime}</span>
+              <span className="text-[#504133] text-xs">{post.readingTime}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-black text-[#F8FAFC] leading-tight mb-5">
+            <h1 className="font-display text-3xl md:text-4xl font-black text-[#EDE0CC] leading-tight mb-5">
               {post.title}
             </h1>
-            <p className="text-lg text-[#94A3B8] leading-relaxed mb-6">{post.excerpt}</p>
+            <p className="text-lg text-[#9E8B71] leading-relaxed mb-6">{post.excerpt}</p>
             <div className="flex items-center gap-3 pt-5 border-t border-white/[0.08]">
-              <div className="w-9 h-9 rounded-full bg-[#22C55E]/20 border border-[#22C55E]/30 flex items-center justify-center text-xs font-bold text-[#22C55E]">
+              <div className="w-9 h-9 rounded-full bg-[#C9A96E]/20 border border-[#C9A96E]/30 flex items-center justify-center text-xs font-bold text-[#C9A96E]">
                 GG
               </div>
               <div>
-                <p className="text-sm font-semibold text-[#F8FAFC]">{post.author}</p>
-                <p className="text-xs text-[#64748B]">{post.authorTitle}</p>
-                <p className="text-xs text-[#475569] mt-0.5">
+                <p className="text-sm font-semibold text-[#EDE0CC]">{post.author}</p>
+                <p className="text-xs text-[#6E5E48]">{post.authorTitle}</p>
+                <p className="text-xs text-[#504133] mt-0.5">
                   Published {formatDate(post.date)}
                   {post.lastUpdated && post.lastUpdated !== post.date && (
                     <> · Updated {formatDate(post.lastUpdated)}</>
@@ -109,9 +109,9 @@ export default async function ArticlePage({ params }: Props) {
 
           {/* BLUF — At a Glance */}
           {post.bluf && (
-            <div className="mb-10 p-5 rounded-2xl border border-[#22C55E]/20 bg-[#22C55E]/5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#22C55E] mb-2">At a glance</p>
-              <p className="text-sm text-[#94A3B8] leading-relaxed">{post.bluf}</p>
+            <div className="mb-10 p-5 rounded-2xl border border-[#C9A96E]/20 bg-[#C9A96E]/5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A96E] mb-2">At a glance</p>
+              <p className="text-sm text-[#9E8B71] leading-relaxed">{post.bluf}</p>
             </div>
           )}
 
@@ -124,7 +124,7 @@ export default async function ArticlePage({ params }: Props) {
           {/* Disclaimer */}
           <div className="mt-12 p-5 rounded-xl border border-[#F59E0B]/20 bg-[#F59E0B]/5">
             <p className="text-xs text-[#F59E0B] font-semibold mb-1">Peer navigation — not legal advice</p>
-            <p className="text-xs text-[#94A3B8] leading-relaxed">
+            <p className="text-xs text-[#9E8B71] leading-relaxed">
               This article reflects personal experience and publicly available information. It is not legal advice.
               For questions specific to your visa status, consult a licensed immigration attorney.
             </p>
@@ -134,13 +134,13 @@ export default async function ArticlePage({ params }: Props) {
           <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-8 border-t border-white/[0.08]">
             <Link
               href="/news"
-              className="text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors flex items-center gap-1"
+              className="text-sm text-[#9E8B71] hover:text-[#C9A96E] transition-colors flex items-center gap-1"
             >
               ← Back to News
             </Link>
             <Link
               href="/#waitlist"
-              className="px-5 py-2.5 rounded-lg bg-[#22C55E] text-[#080D1A] text-sm font-semibold hover:bg-[#4ADE80] transition-colors"
+              className="px-5 py-2.5 rounded-lg bg-[#C9A96E] text-[#0C0A07] text-sm font-semibold hover:bg-[#D4B882] transition-colors"
             >
               Join the OPTionality waitlist →
             </Link>

@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #080D1A;
-  --color-surface: #0F1729;
-  --color-surface-2: #162040;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-text: #F8FAFC;
-  --color-muted: #94A3B8;
-  --color-opt: #22C55E;
-  --color-opt-dim: #16A34A;
-  --color-opt-glow: rgba(34, 197, 94, 0.15);
+  --color-background: #0C0A07;
+  --color-surface: #161109;
+  --color-surface-2: #1E1812;
+  --color-border: rgba(201, 169, 110, 0.12);
+  --color-text: #EDE0CC;
+  --color-muted: #9E8B71;
+  --color-opt: #C9A96E;
+  --color-opt-dim: #A07C48;
+  --color-opt-glow: rgba(201, 169, 110, 0.15);
   --color-amber: #F59E0B;
   --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
 }
 
 * {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(201, 169, 110, 0.12);
 }
 
 html {
@@ -23,19 +24,23 @@ html {
 }
 
 body {
-  background: #080D1A;
-  color: #F8FAFC;
+  background: #0C0A07;
+  color: #EDE0CC;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
+@utility font-display {
+  font-family: var(--font-display, Georgia, "Times New Roman", serif);
+}
+
 .opt-brand .opt {
-  color: #22C55E;
+  color: #C9A96E;
   font-weight: 800;
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #22C55E 0%, #4ADE80 100%);
+  background: linear-gradient(135deg, #C9A96E 0%, #E8D0A0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -45,17 +50,17 @@ body {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .card-hover:hover {
-  border-color: rgba(34, 197, 94, 0.3);
-  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.15), 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-color: rgba(201, 169, 110, 0.3);
+  box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.12), 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .chat-bubble-user {
-  background: #22C55E;
-  color: #080D1A;
+  background: #C9A96E;
+  color: #0C0A07;
 }
 .chat-bubble-ai {
-  background: #162040;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1E1812;
+  border: 1px solid rgba(201, 169, 110, 0.12);
 }
 .chat-bubble-system {
   background: rgba(245, 158, 11, 0.1);
@@ -63,17 +68,29 @@ body {
   color: #F59E0B;
 }
 
-.article-body h2 { font-size: 1.5rem; font-weight: 700; margin: 2rem 0 1rem; color: #F8FAFC; }
-.article-body h3 { font-size: 1.25rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #F8FAFC; }
-.article-body p { color: #CBD5E1; line-height: 1.8; margin-bottom: 1.25rem; }
-.article-body ul { list-style: disc; padding-left: 1.5rem; color: #CBD5E1; margin-bottom: 1.25rem; }
+.article-body h2 {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: #EDE0CC;
+}
+.article-body h3 {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  color: #EDE0CC;
+}
+.article-body p { color: #B8A68A; line-height: 1.8; margin-bottom: 1.25rem; }
+.article-body ul { list-style: disc; padding-left: 1.5rem; color: #B8A68A; margin-bottom: 1.25rem; }
 .article-body ul li { margin-bottom: 0.5rem; line-height: 1.7; }
-.article-body a { color: #22C55E; text-decoration: underline; text-underline-offset: 3px; }
-.article-body strong { color: #F8FAFC; font-weight: 600; }
+.article-body a { color: #C9A96E; text-decoration: underline; text-underline-offset: 3px; }
+.article-body strong { color: #EDE0CC; font-weight: 600; }
 .article-body blockquote {
-  border-left: 3px solid #22C55E;
+  border-left: 3px solid #C9A96E;
   padding-left: 1.25rem;
   margin: 1.5rem 0;
-  color: #94A3B8;
+  color: #9E8B71;
   font-style: italic;
 }

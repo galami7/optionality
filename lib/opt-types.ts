@@ -3,8 +3,8 @@ export type Phase = "prep" | "opt" | "stem" | "grace";
 
 export const urgencyConfig: Record<Urgency, { dot: string; badge: string; label: string }> = {
   past: {
-    dot: "bg-[#334155]",
-    badge: "bg-[#1E293B] text-[#64748B] border-[#334155]",
+    dot: "bg-[#3D3020]",
+    badge: "bg-[#251C0E] text-[#6E5E48] border-[#3D3020]",
     label: "Passed",
   },
   critical: {
@@ -18,8 +18,8 @@ export const urgencyConfig: Record<Urgency, { dot: string; badge: string; label:
     label: "Upcoming",
   },
   safe: {
-    dot: "bg-[#22C55E]",
-    badge: "bg-[#22C55E]/10 text-[#22C55E] border-[#22C55E]/30",
+    dot: "bg-[#C9A96E]",
+    badge: "bg-[#C9A96E]/10 text-[#C9A96E] border-[#C9A96E]/30",
     label: "On track",
   },
   future: {
@@ -36,7 +36,7 @@ export const urgencyConfig: Record<Urgency, { dot: string; badge: string; label:
 
 export const phaseColors: Record<Phase, string> = {
   prep: "text-[#F59E0B]",
-  opt: "text-[#22C55E]",
+  opt: "text-[#C9A96E]",
   stem: "text-[#3B82F6]",
   grace: "text-purple-400",
 };

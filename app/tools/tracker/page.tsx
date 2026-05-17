@@ -70,39 +70,39 @@ export default function TrackerPage() {
       <div className="px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="mx-auto max-w-2xl">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-[#64748B] mb-10">
-            <Link href="/" className="hover:text-[#22C55E] transition-colors">Home</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#6E5E48] mb-10">
+            <Link href="/" className="hover:text-[#C9A96E] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/tools" className="hover:text-[#22C55E] transition-colors">Tools</Link>
+            <Link href="/tools" className="hover:text-[#C9A96E] transition-colors">Tools</Link>
             <span>/</span>
-            <span className="text-[#94A3B8]">90-Day Tracker</span>
+            <span className="text-[#9E8B71]">90-Day Tracker</span>
           </nav>
 
           {/* Header */}
           <header className="mb-10">
             <div className="flex items-center gap-2 mb-4">
-              <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-[#22C55E]/10 text-[#22C55E]">
+              <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-[#C9A96E]/10 text-[#C9A96E]">
                 Free Tool
               </span>
-              <span className="text-xs text-[#475569]">Runs in your browser · No data stored</span>
+              <span className="text-xs text-[#504133]">Runs in your browser · No data stored</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-black text-[#F8FAFC] leading-tight mb-4">
+            <h1 className="font-display text-3xl md:text-4xl font-black text-[#EDE0CC] leading-tight mb-4">
               OPT 90-Day Unemployment Tracker
             </h1>
-            <p className="text-lg text-[#94A3B8] leading-relaxed">
+            <p className="text-lg text-[#9E8B71] leading-relaxed">
               Enter your EAD start date and see exactly how many cumulative unemployment days you&apos;ve used —
               and how many remain before USCIS automatically terminates your OPT.
             </p>
           </header>
 
           {/* BLUF */}
-          <div className="mb-10 p-5 rounded-2xl border border-[#22C55E]/20 bg-[#22C55E]/5">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#22C55E] mb-2">At a glance</p>
-            <p className="text-sm text-[#94A3B8] leading-relaxed">
-              F-1 OPT holders may accumulate up to <strong className="text-[#F8FAFC]">90 cumulative days of unemployment</strong> during standard OPT.
+          <div className="mb-10 p-5 rounded-2xl border border-[#C9A96E]/20 bg-[#C9A96E]/5">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A96E] mb-2">At a glance</p>
+            <p className="text-sm text-[#9E8B71] leading-relaxed">
+              F-1 OPT holders may accumulate up to <strong className="text-[#EDE0CC]">90 cumulative days of unemployment</strong> during standard OPT.
               The clock runs from your EAD start date. At 90 days, USCIS automatically terminates OPT — no notice is sent.
               STEM OPT raises this to 150 cumulative days. Days from standard OPT carry over.
-              Source: <a href="https://www.ice.gov/sevis/practical-training" target="_blank" rel="noopener noreferrer" className="text-[#22C55E] hover:underline">ICE SEVIS</a>, <a href="https://studyinthestates.dhs.gov/students/student-employment/optional-practical-training-opt" target="_blank" rel="noopener noreferrer" className="text-[#22C55E] hover:underline">DHS Study in the States</a>.
+              Source: <a href="https://www.ice.gov/sevis/practical-training" target="_blank" rel="noopener noreferrer" className="text-[#C9A96E] hover:underline">ICE SEVIS</a>, <a href="https://studyinthestates.dhs.gov/students/student-employment/optional-practical-training-opt" target="_blank" rel="noopener noreferrer" className="text-[#C9A96E] hover:underline">DHS Study in the States</a>.
             </p>
           </div>
 
@@ -111,12 +111,12 @@ export default function TrackerPage() {
 
           {/* FAQ */}
           <div className="mt-16">
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-6">Frequently asked questions</h2>
+            <h2 className="text-xl font-bold text-[#EDE0CC] mb-6">Frequently asked questions</h2>
             <div className="space-y-4">
               {faqItems.map(({ q, a }) => (
-                <div key={q} className="rounded-2xl border border-white/[0.08] bg-[#0F1729] p-6">
-                  <h3 className="text-sm font-semibold text-[#F8FAFC] mb-2">{q}</h3>
-                  <p className="text-sm text-[#94A3B8] leading-relaxed">{a}</p>
+                <div key={q} className="rounded-2xl border border-white/[0.08] bg-[#161109] p-6">
+                  <h3 className="text-sm font-semibold text-[#EDE0CC] mb-2">{q}</h3>
+                  <p className="text-sm text-[#9E8B71] leading-relaxed">{a}</p>
                 </div>
               ))}
             </div>
@@ -124,7 +124,7 @@ export default function TrackerPage() {
 
           {/* Back link */}
           <div className="mt-10 pt-8 border-t border-white/[0.08]">
-            <Link href="/tools" className="text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors">
+            <Link href="/tools" className="text-sm text-[#9E8B71] hover:text-[#C9A96E] transition-colors">
               ← All Tools
             </Link>
           </div>

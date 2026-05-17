@@ -202,7 +202,7 @@ export function getAllSlugs(): string[] {
 }
 
 export const categoryColors: Record<Post["category"], string> = {
-  "OPT Updates": "bg-[#22C55E]/10 text-[#22C55E]",
+  "OPT Updates": "bg-[#C9A96E]/10 text-[#C9A96E]",
   "Startup Stories": "bg-[#F59E0B]/10 text-[#F59E0B]",
   "Policy & Law": "bg-blue-500/10 text-blue-400",
   "Community": "bg-purple-500/10 text-purple-400",

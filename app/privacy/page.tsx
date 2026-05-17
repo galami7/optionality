@@ -12,26 +12,26 @@ export default function PrivacyPage() {
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       <div className="mx-auto max-w-3xl">
-        <nav className="flex items-center gap-2 text-sm text-[#64748B] mb-10">
-          <Link href="/" className="hover:text-[#22C55E] transition-colors">Home</Link>
+        <nav className="flex items-center gap-2 text-sm text-[#6E5E48] mb-10">
+          <Link href="/" className="hover:text-[#C9A96E] transition-colors">Home</Link>
           <span>/</span>
-          <span className="text-[#94A3B8]">Privacy Policy</span>
+          <span className="text-[#9E8B71]">Privacy Policy</span>
         </nav>
 
         <header className="mb-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#22C55E] mb-3">Legal</p>
-          <h1 className="text-4xl font-black text-[#F8FAFC] mb-3">Privacy Policy</h1>
-          <p className="text-sm text-[#64748B]">Last updated: {LAST_UPDATED}</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-[#C9A96E] mb-3">Legal</p>
+          <h1 className="text-4xl font-black text-[#EDE0CC] mb-3">Privacy Policy</h1>
+          <p className="text-sm text-[#6E5E48]">Last updated: {LAST_UPDATED}</p>
         </header>
 
         {/* Core promise — above the fold */}
-        <div className="mb-10 p-6 rounded-2xl border border-[#22C55E]/20 bg-[#22C55E]/5">
-          <p className="text-sm font-semibold text-[#F8FAFC] mb-2">The short version</p>
-          <p className="text-sm text-[#94A3B8] leading-relaxed">
+        <div className="mb-10 p-6 rounded-2xl border border-[#C9A96E]/20 bg-[#C9A96E]/5">
+          <p className="text-sm font-semibold text-[#EDE0CC] mb-2">The short version</p>
+          <p className="text-sm text-[#9E8B71] leading-relaxed">
             We collect only what we need to run OPTionality. We never sell your data. We never share
             your information with employers, USCIS, your school, or any government entity. You can
             delete your data at any time by emailing{" "}
-            <a href="mailto:guillaume@opt-ionality.com" className="text-[#22C55E] hover:underline">
+            <a href="mailto:guillaume@opt-ionality.com" className="text-[#C9A96E] hover:underline">
               guillaume@opt-ionality.com
             </a>
             .
@@ -42,8 +42,7 @@ export default function PrivacyPage() {
           <section>
             <h2>Who we are</h2>
             <p>
-              OPTionality is a DBA (doing business as) of <strong>Gruyters Ventures LLC</strong>, an Illinois
-              limited liability company. Our principal place of business is Chicago, IL. You can reach us at{" "}
+              OPTionality is operated by Guillaume. Our principal place of business is Chicago, IL. You can reach us at{" "}
               <a href="mailto:guillaume@opt-ionality.com">guillaume@opt-ionality.com</a>.
             </p>
             <p>
@@ -152,13 +151,13 @@ export default function PrivacyPage() {
               Questions about this policy or your data:{" "}
               <a href="mailto:guillaume@opt-ionality.com">guillaume@opt-ionality.com</a>
               <br />
-              Gruyters Ventures LLC · Chicago, IL
+              OPTionality · Chicago, IL
             </p>
           </section>
         </div>
 
         <div className="mt-10 pt-8 border-t border-white/[0.08]">
-          <Link href="/" className="text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors">
+          <Link href="/" className="text-sm text-[#9E8B71] hover:text-[#C9A96E] transition-colors">
             ← Back to OPTionality
           </Link>
         </div>

@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/timeline`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/tools`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/tools/tracker`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/tools/stem-checker`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/tools/cap-gap`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/advisor`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },

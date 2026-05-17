@@ -205,21 +205,21 @@ export default function TimelineTool() {
       {!submitted && (
         <form
           onSubmit={handleGenerate}
-          className="rounded-2xl border border-white/[0.08] bg-[#0F1729] p-8 md:p-10 mb-10"
+          className="rounded-2xl border border-white/[0.08] bg-[#161109] p-8 md:p-10 mb-10"
         >
-          <h2 className="text-lg font-bold text-[#F8FAFC] mb-6">Tell us about your program</h2>
+          <h2 className="text-lg font-bold text-[#EDE0CC] mb-6">Tell us about your program</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
             {/* Graduation month */}
             <div>
-              <label className="block text-xs font-semibold text-[#94A3B8] uppercase tracking-wide mb-2">
+              <label className="block text-xs font-semibold text-[#9E8B71] uppercase tracking-wide mb-2">
                 Graduation month *
               </label>
               <select
                 required
                 value={form.gradMonth}
                 onChange={(e) => update("gradMonth", e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-[#162040] border border-white/[0.10] text-[#F8FAFC] text-sm focus:outline-none focus:border-[#22C55E]/50"
+                className="w-full px-4 py-3 rounded-xl bg-[#1E1812] border border-white/[0.10] text-[#EDE0CC] text-sm focus:outline-none focus:border-[#C9A96E]/50"
               >
                 <option value="">Select month</option>
                 {months.map((m, i) => (
@@ -230,14 +230,14 @@ export default function TimelineTool() {
 
             {/* Graduation year */}
             <div>
-              <label className="block text-xs font-semibold text-[#94A3B8] uppercase tracking-wide mb-2">
+              <label className="block text-xs font-semibold text-[#9E8B71] uppercase tracking-wide mb-2">
                 Graduation year *
               </label>
               <select
                 required
                 value={form.gradYear}
                 onChange={(e) => update("gradYear", e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-[#162040] border border-white/[0.10] text-[#F8FAFC] text-sm focus:outline-none focus:border-[#22C55E]/50"
+                className="w-full px-4 py-3 rounded-xl bg-[#1E1812] border border-white/[0.10] text-[#EDE0CC] text-sm focus:outline-none focus:border-[#C9A96E]/50"
               >
                 <option value="">Select year</option>
                 {years.map((y) => (
@@ -248,13 +248,13 @@ export default function TimelineTool() {
 
             {/* Degree level */}
             <div>
-              <label className="block text-xs font-semibold text-[#94A3B8] uppercase tracking-wide mb-2">
+              <label className="block text-xs font-semibold text-[#9E8B71] uppercase tracking-wide mb-2">
                 Degree level
               </label>
               <select
                 value={form.level}
                 onChange={(e) => update("level", e.target.value as FormData["level"])}
-                className="w-full px-4 py-3 rounded-xl bg-[#162040] border border-white/[0.10] text-[#F8FAFC] text-sm focus:outline-none focus:border-[#22C55E]/50"
+                className="w-full px-4 py-3 rounded-xl bg-[#1E1812] border border-white/[0.10] text-[#EDE0CC] text-sm focus:outline-none focus:border-[#C9A96E]/50"
               >
                 <option value="bachelors">Bachelor&apos;s</option>
                 <option value="masters">Master&apos;s / MBA</option>
@@ -265,28 +265,28 @@ export default function TimelineTool() {
 
             {/* School */}
             <div>
-              <label className="block text-xs font-semibold text-[#94A3B8] uppercase tracking-wide mb-2">
-                School <span className="font-normal text-[#64748B]">(optional)</span>
+              <label className="block text-xs font-semibold text-[#9E8B71] uppercase tracking-wide mb-2">
+                School <span className="font-normal text-[#6E5E48]">(optional)</span>
               </label>
               <input
                 type="text"
                 placeholder="e.g. Georgetown, Kellogg"
                 value={form.school}
                 onChange={(e) => update("school", e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-[#162040] border border-white/[0.10] text-[#F8FAFC] placeholder-[#475569] text-sm focus:outline-none focus:border-[#22C55E]/50"
+                className="w-full px-4 py-3 rounded-xl bg-[#1E1812] border border-white/[0.10] text-[#EDE0CC] placeholder-[#504133] text-sm focus:outline-none focus:border-[#C9A96E]/50"
               />
             </div>
           </div>
 
           {/* STEM question */}
           <div className="mb-8">
-            <label className="block text-xs font-semibold text-[#94A3B8] uppercase tracking-wide mb-3">
+            <label className="block text-xs font-semibold text-[#9E8B71] uppercase tracking-wide mb-3">
               Is your degree in a STEM field?{" "}
               <a
                 href="https://www.ice.gov/doclib/sevis/pdf/stemList2022.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#22C55E] font-normal normal-case hover:underline"
+                className="text-[#C9A96E] font-normal normal-case hover:underline"
               >
                 Check the DHS list ↗
               </a>
@@ -299,8 +299,8 @@ export default function TimelineTool() {
                   onClick={() => update("isStem", val)}
                   className={`flex-1 py-2.5 rounded-xl text-sm font-medium border transition-colors capitalize ${
                     form.isStem === val
-                      ? "border-[#22C55E]/50 bg-[#22C55E]/10 text-[#22C55E]"
-                      : "border-white/[0.08] bg-[#162040] text-[#94A3B8] hover:text-[#F8FAFC]"
+                      ? "border-[#C9A96E]/50 bg-[#C9A96E]/10 text-[#C9A96E]"
+                      : "border-white/[0.08] bg-[#1E1812] text-[#9E8B71] hover:text-[#EDE0CC]"
                   }`}
                 >
                   {val === "unsure" ? "Not sure" : val.charAt(0).toUpperCase() + val.slice(1)}
@@ -308,12 +308,12 @@ export default function TimelineTool() {
               ))}
             </div>
             {form.isStem === "yes" && (
-              <p className="text-xs text-[#22C55E] mt-2">
+              <p className="text-xs text-[#C9A96E] mt-2">
                 ✓ Your timeline will include STEM OPT extension dates (+24 months).
               </p>
             )}
             {form.isStem === "unsure" && (
-              <p className="text-xs text-[#64748B] mt-2">
+              <p className="text-xs text-[#6E5E48] mt-2">
                 We&apos;ll generate a standard 12-month OPT timeline. Check the DHS list above to confirm.
               </p>
             )}
@@ -322,7 +322,7 @@ export default function TimelineTool() {
           <button
             type="submit"
             disabled={!form.gradMonth || !form.gradYear}
-            className="w-full py-4 rounded-xl bg-[#22C55E] text-[#080D1A] font-bold text-base hover:bg-[#4ADE80] transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-[#22C55E]/20"
+            className="w-full py-4 rounded-xl bg-[#C9A96E] text-[#0C0A07] font-bold text-base hover:bg-[#D4B882] transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-[#C9A96E]/20"
           >
             Generate my OPT timeline →
           </button>
@@ -333,10 +333,10 @@ export default function TimelineTool() {
       {events && (
         <div>
           {/* Summary bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 p-5 rounded-2xl border border-white/[0.08] bg-[#0F1729]">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 p-5 rounded-2xl border border-white/[0.08] bg-[#161109]">
             <div>
-              <p className="text-xs text-[#64748B] uppercase tracking-wide font-semibold mb-0.5">Your timeline</p>
-              <p className="text-lg font-bold text-[#F8FAFC]">
+              <p className="text-xs text-[#6E5E48] uppercase tracking-wide font-semibold mb-0.5">Your timeline</p>
+              <p className="text-lg font-bold text-[#EDE0CC]">
                 {months[Number(form.gradMonth) - 1]} {form.gradYear}
                 {form.school ? ` · ${form.school}` : ""}
                 {form.isStem === "yes" ? " · STEM eligible" : ""}
@@ -344,7 +344,7 @@ export default function TimelineTool() {
             </div>
             <button
               onClick={handleReset}
-              className="px-4 py-2 rounded-lg border border-white/[0.10] text-[#94A3B8] text-sm hover:text-white hover:border-white/20 transition-colors"
+              className="px-4 py-2 rounded-lg border border-white/[0.10] text-[#9E8B71] text-sm hover:text-white hover:border-white/20 transition-colors"
             >
               ← Edit details
             </button>
@@ -377,7 +377,7 @@ export default function TimelineTool() {
                   <div key={event.id} className={`relative flex gap-6 ${idx < events.length - 1 ? "pb-8" : ""}`}>
                     {/* Dot */}
                     <div className="relative z-10 flex-shrink-0 mt-1">
-                      <span className={`block w-[14px] h-[14px] rounded-full border-2 border-[#080D1A] ${cfg.dot} mt-1`} />
+                      <span className={`block w-[14px] h-[14px] rounded-full border-2 border-[#0C0A07] ${cfg.dot} mt-1`} />
                     </div>
 
                     {/* Content card */}
@@ -386,7 +386,7 @@ export default function TimelineTool() {
                         ? "border-red-500/25 bg-red-500/5"
                         : event.urgency === "milestone"
                         ? "border-purple-500/25 bg-purple-500/5"
-                        : "border-white/[0.08] bg-[#0F1729]"
+                        : "border-white/[0.08] bg-[#161109]"
                     }`}>
                       {/* Header row */}
                       <div className="flex flex-wrap items-start gap-2 mb-3">
@@ -394,7 +394,7 @@ export default function TimelineTool() {
                           <p className={`text-[11px] font-semibold uppercase tracking-widest mb-1 ${phaseColors[event.phase]}`}>
                             {phaseLabels[event.phase]}
                           </p>
-                          <h3 className="text-base font-bold text-[#F8FAFC] leading-snug">{event.title}</h3>
+                          <h3 className="text-base font-bold text-[#EDE0CC] leading-snug">{event.title}</h3>
                         </div>
                         <div className="flex flex-col items-end gap-1 flex-shrink-0">
                           <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${cfg.badge}`}>
@@ -404,18 +404,18 @@ export default function TimelineTool() {
                               ? "Today"
                               : `${days} days`}
                           </span>
-                          <span className="text-xs text-[#64748B]">{fmt(event.date)}</span>
+                          <span className="text-xs text-[#6E5E48]">{fmt(event.date)}</span>
                         </div>
                       </div>
 
                       {/* Description */}
-                      <p className="text-sm text-[#94A3B8] leading-relaxed mb-3">{event.description}</p>
+                      <p className="text-sm text-[#9E8B71] leading-relaxed mb-3">{event.description}</p>
 
                       {/* Action */}
                       {!isPast && (
-                        <div className="flex items-start gap-2 p-3 rounded-xl bg-[#162040] border border-white/[0.06]">
-                          <span className="text-[#22C55E] flex-shrink-0 mt-0.5">→</span>
-                          <p className="text-xs text-[#CBD5E1] leading-relaxed">{event.action}</p>
+                        <div className="flex items-start gap-2 p-3 rounded-xl bg-[#1E1812] border border-white/[0.06]">
+                          <span className="text-[#C9A96E] flex-shrink-0 mt-0.5">→</span>
+                          <p className="text-xs text-[#B8A68A] leading-relaxed">{event.action}</p>
                         </div>
                       )}
                     </div>
@@ -427,26 +427,26 @@ export default function TimelineTool() {
 
           {/* Bottom CTAs */}
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="rounded-2xl border border-[#22C55E]/20 bg-[#22C55E]/5 p-6">
-              <p className="text-sm font-semibold text-[#F8FAFC] mb-2">Get deadline reminders</p>
-              <p className="text-xs text-[#94A3B8] mb-4 leading-relaxed">
+            <div className="rounded-2xl border border-[#C9A96E]/20 bg-[#C9A96E]/5 p-6">
+              <p className="text-sm font-semibold text-[#EDE0CC] mb-2">Get deadline reminders</p>
+              <p className="text-xs text-[#9E8B71] mb-4 leading-relaxed">
                 Join OPTionality and we&apos;ll send you email reminders before each critical deadline — so you never miss a window.
               </p>
               <Link
                 href="/#waitlist"
-                className="inline-block px-4 py-2 rounded-lg bg-[#22C55E] text-[#080D1A] text-sm font-semibold hover:bg-[#4ADE80] transition-colors"
+                className="inline-block px-4 py-2 rounded-lg bg-[#C9A96E] text-[#0C0A07] text-sm font-semibold hover:bg-[#D4B882] transition-colors"
               >
                 Join the waitlist →
               </Link>
             </div>
-            <div className="rounded-2xl border border-white/[0.08] bg-[#0F1729] p-6">
-              <p className="text-sm font-semibold text-[#F8FAFC] mb-2">Have questions?</p>
-              <p className="text-xs text-[#94A3B8] mb-4 leading-relaxed">
+            <div className="rounded-2xl border border-white/[0.08] bg-[#161109] p-6">
+              <p className="text-sm font-semibold text-[#EDE0CC] mb-2">Have questions?</p>
+              <p className="text-xs text-[#9E8B71] mb-4 leading-relaxed">
                 Ask the OPTionality AI Advisor anything about your specific situation — or book a free 1-on-1 with Guillaume.
               </p>
               <Link
                 href="/advisor"
-                className="inline-block px-4 py-2 rounded-lg border border-white/[0.12] text-[#94A3B8] text-sm font-medium hover:text-white hover:border-white/20 transition-colors"
+                className="inline-block px-4 py-2 rounded-lg border border-white/[0.12] text-[#9E8B71] text-sm font-medium hover:text-white hover:border-white/20 transition-colors"
               >
                 Ask the AI Advisor →
               </Link>
@@ -456,8 +456,8 @@ export default function TimelineTool() {
           {/* Cross-sell: 90-day tracker */}
           <div className="mt-6 p-5 rounded-2xl border border-[#F59E0B]/20 bg-[#F59E0B]/5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="flex-1">
-              <p className="text-sm font-semibold text-[#F8FAFC] mb-1">Already on OPT?</p>
-              <p className="text-xs text-[#94A3B8] leading-relaxed">
+              <p className="text-sm font-semibold text-[#EDE0CC] mb-1">Already on OPT?</p>
+              <p className="text-xs text-[#9E8B71] leading-relaxed">
                 Track your 90-day unemployment clock in real time — see exactly how many days you&apos;ve used and how many remain.
               </p>
             </div>
@@ -470,7 +470,7 @@ export default function TimelineTool() {
           </div>
 
           {/* Disclaimer */}
-          <p className="text-xs text-[#475569] text-center mt-8 leading-relaxed">
+          <p className="text-xs text-[#504133] text-center mt-8 leading-relaxed">
             This tool generates estimates based on standard OPT rules. Dates may vary by school, OIS processing time, and USCIS workload.
             Always confirm with your DSO and a licensed immigration attorney for your specific situation.
           </p>
