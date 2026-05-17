@@ -39,7 +39,9 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-[#F8FAFC] mb-3">Resources</h3>
             <ul className="space-y-2 text-sm text-[#94A3B8]">
-              <li><Link href="/timeline" className="hover:text-[#22C55E] transition-colors">OPT Timeline Tool</Link></li>
+              <li><Link href="/tools" className="hover:text-[#22C55E] transition-colors">All Tools</Link></li>
+              <li><Link href="/tools/tracker" className="hover:text-[#22C55E] transition-colors">90-Day Unemployment Tracker</Link></li>
+              <li><Link href="/timeline" className="hover:text-[#22C55E] transition-colors">OPT Timeline Calculator</Link></li>
               <li><Link href="/news" className="hover:text-[#22C55E] transition-colors">News & Updates</Link></li>
               <li><Link href="/advisor" className="hover:text-[#22C55E] transition-colors">AI Advisor</Link></li>
               <li><Link href="/about" className="hover:text-[#22C55E] transition-colors">About Guillaume</Link></li>
