@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -15,10 +16,16 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16 items-start mb-20">
           {/* Photo + name */}
           <div className="md:col-span-2 flex flex-col items-center md:items-start gap-5">
-            {/* Photo placeholder */}
-            <div className="w-44 h-44 rounded-3xl border-2 border-dashed border-[#22C55E]/30 bg-[#0F1729] flex flex-col items-center justify-center gap-2 text-center p-4">
-              <span className="text-4xl">📸</span>
-              <p className="text-xs text-[#475569] leading-tight">Photo coming soon</p>
+            {/* Avatar */}
+            <div className="w-44 h-56 rounded-3xl overflow-hidden bg-[#0F1729] border border-white/[0.08]">
+              <Image
+                src="/avatar.png"
+                alt="Guillaume — Founder of OPTionality"
+                width={176}
+                height={224}
+                className="w-full h-full object-cover object-top"
+                priority
+              />
             </div>
 
             <div>

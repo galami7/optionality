@@ -46,10 +46,12 @@ export default async function ArticlePage({ params }: Props) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    dateModified: post.lastUpdated ?? post.date,
     author: {
       "@type": "Person",
       name: post.author,
-      url: "https://opt-ionality.com",
+      jobTitle: post.authorTitle,
+      url: "https://opt-ionality.com/about",
     },
     publisher: {
       "@type": "Organization",
@@ -94,10 +96,24 @@ export default async function ArticlePage({ params }: Props) {
               </div>
               <div>
                 <p className="text-sm font-semibold text-[#F8FAFC]">{post.author}</p>
-                <p className="text-xs text-[#64748B]">{formatDate(post.date)}</p>
+                <p className="text-xs text-[#64748B]">{post.authorTitle}</p>
+                <p className="text-xs text-[#475569] mt-0.5">
+                  Published {formatDate(post.date)}
+                  {post.lastUpdated && post.lastUpdated !== post.date && (
+                    <> · Updated {formatDate(post.lastUpdated)}</>
+                  )}
+                </p>
               </div>
             </div>
           </header>
+
+          {/* BLUF — At a Glance */}
+          {post.bluf && (
+            <div className="mb-10 p-5 rounded-2xl border border-[#22C55E]/20 bg-[#22C55E]/5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#22C55E] mb-2">At a glance</p>
+              <p className="text-sm text-[#94A3B8] leading-relaxed">{post.bluf}</p>
+            </div>
+          )}
 
           {/* Article body */}
           <div

@@ -2,8 +2,11 @@ export type Post = {
   slug: string;
   title: string;
   excerpt: string;
+  bluf: string; // 50–80 word "At a Glance" answer for GEO/AI citation
   date: string;
+  lastUpdated?: string;
   author: string;
+  authorTitle: string;
   category: "OPT Updates" | "Startup Stories" | "Policy & Law" | "Community" | "Resources";
   readingTime: string;
   featured?: boolean;
@@ -16,8 +19,11 @@ export const posts: Post[] = [
     title: "USCIS OPT Processing Times Are Longer Than Ever — Here's What to Do",
     excerpt:
       "Processing times have stretched to 4–5 months at some service centers. Here's the current data, which centers are faster, and exactly how to protect yourself from gaps.",
+    bluf: "As of May 2026, USCIS I-765 OPT processing times range from 3–5 months depending on service center. The Texas Service Center averages ~3.5 months; Nebraska ~4.5 months. File your I-765 as early as your OIS allows — 90 days before graduation. Your 90-day unemployment clock starts on your EAD start date, not the day your card arrives. Always confirm current times at egov.uscis.gov/processing-times.",
     date: "2026-05-10",
-    author: "Guillaume Gruyters",
+    lastUpdated: "2026-05-16",
+    author: "Guillaume",
+    authorTitle: "Founder, OPTionality · Kellogg MBA '26 · On OPT",
     category: "OPT Updates",
     readingTime: "6 min read",
     featured: true,
@@ -48,8 +54,10 @@ export const posts: Post[] = [
     title: "The Complete STEM OPT Extension Guide for 2026 Graduates",
     excerpt:
       "STEM OPT adds 24 months to your runway — but the filing window, E-Verify requirement, and I-983 reporting are all traps. This is the plain-English walkthrough.",
+    bluf: "STEM OPT is a 24-month extension for students with a STEM degree on the DHS Designated List — bringing total OPT runway to 36 months. Your employer must be E-Verify enrolled (actively, not just registered). You and your employer complete Form I-983 training plan. File within 90 days of OPT expiry. If your extension is pending when standard OPT expires, you're covered for 180 more days — do not stop working.",
     date: "2026-04-28",
-    author: "Guillaume Gruyters",
+    author: "Guillaume",
+    authorTitle: "Founder, OPTionality · Kellogg MBA '26 · On OPT",
     category: "Resources",
     readingTime: "8 min read",
     featured: true,
@@ -76,8 +84,10 @@ export const posts: Post[] = [
     title: "He Built a $2M ARR Company on a Student Visa. Here's Exactly How.",
     excerpt:
       "Arjun Sharma (Wharton MBA '24) launched a B2B SaaS on F-1 OPT, structured his cap table to stay compliant, and closed his first $500K round before his card expired. A full breakdown.",
+    bluf: "Arjun Sharma (Wharton MBA '24) built a $2M ARR B2B SaaS on F-1 OPT by structuring through his university incubator (CPT), then using an employer-of-record after graduation. Key moves: hold voting preferred shares (not common stock) during OPT to reduce USCIS 'employer-employee' scrutiny, pay yourself W-2 payroll through your LLC, and hire an immigration attorney before structuring any equity. STEM OPT extended his runway to 36 months.",
     date: "2026-04-15",
-    author: "Guillaume Gruyters",
+    author: "Guillaume",
+    authorTitle: "Founder, OPTionality · Kellogg MBA '26 · On OPT",
     category: "Startup Stories",
     readingTime: "10 min read",
     body: `
@@ -105,8 +115,11 @@ export const posts: Post[] = [
     title: "OPT Employer Tracker — May 2026: Who's Hiring, Who's Paused",
     excerpt:
       "This month: Google reinstated OPT sponsorship for New Grad SWE, Amazon scaled back STEM OPT renewals in AWS, and three Chicago-area startups added E-Verify. Full tracker inside.",
+    bluf: "May 2026 OPT employer snapshot: Google reinstated OPT sponsorship for New Grad SWE (L3). Salesforce actively hiring OPT for product roles in Chicago and SF. Amazon AWS reduced STEM OPT renewals for non-engineering roles. Meta in headcount freeze through Q3. Three new Chicago E-Verify enrollments: Fieldwork (logistics, Series A), Locale AI (real estate analytics, seed), Packsmith (CPG SaaS, pre-seed). Always verify E-Verify status directly with HR before accepting any offer.",
     date: "2026-05-01",
-    author: "Guillaume Gruyters",
+    lastUpdated: "2026-05-16",
+    author: "Guillaume",
+    authorTitle: "Founder, OPTionality · Kellogg MBA '26 · On OPT",
     category: "OPT Updates",
     readingTime: "5 min read",
     body: `
@@ -141,8 +154,10 @@ export const posts: Post[] = [
     title: "Self-Employment on OPT: What's Actually Legal in 2026",
     excerpt:
       "Can you start a company on OPT? Yes — but the structure matters more than the idea. Here's the plain-English breakdown of what USCIS looks for and how to do it right.",
+    bluf: "Self-employment on OPT is legal through your own LLC — but USCIS requires a 'bona fide employer-employee relationship.' Your LLC must have an EIN, board resolutions showing the LLC controls your work, W-2 payroll (not owner's draw), work in your field of study, and 20+ hours/week. 100% ownership increases scrutiny — establish a formal board and document everything. Consult an immigration attorney before structuring ($300–500, worth every dollar).",
     date: "2026-03-20",
-    author: "Guillaume Gruyters",
+    author: "Guillaume",
+    authorTitle: "Founder, OPTionality · Kellogg MBA '26 · On OPT",
     category: "Policy & Law",
     readingTime: "7 min read",
     body: `
