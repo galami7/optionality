@@ -38,9 +38,10 @@ export function FadeIn({
         y: isInView ? 0 : directionOffsets[direction].y,
       }}
       transition={{
-        duration: 0.6,
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
         delay,
-        ease: [0.21, 0.47, 0.32, 0.98],
       }}
       className={className}
     >

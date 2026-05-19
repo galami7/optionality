@@ -1,22 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0C0A07;
-  --color-surface: #161109;
-  --color-surface-2: #1E1812;
-  --color-border: rgba(201, 169, 110, 0.12);
-  --color-text: #EDE0CC;
-  --color-muted: #9E8B71;
-  --color-opt: #C9A96E;
-  --color-opt-dim: #A07C48;
-  --color-opt-glow: rgba(201, 169, 110, 0.15);
-  --color-amber: #F59E0B;
+  --color-background: #000000;
+  --color-surface: #09090B;
+  --color-surface-2: #18181B;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-hover: rgba(255, 255, 255, 0.25);
+  --color-text: #FFFFFF;
+  --color-muted: #A1A1AA;
+  --color-accent: #FFFFFF;
+  --color-accent-dim: #D4D4D8;
   --font-sans: var(--font-inter);
-  --font-display: var(--font-playfair);
 }
 
 * {
-  border-color: rgba(201, 169, 110, 0.12);
+  border-color: var(--color-border);
 }
 
 html {
@@ -24,73 +22,44 @@ html {
 }
 
 body {
-  background: #0C0A07;
-  color: #EDE0CC;
+  background: var(--color-background);
+  color: var(--color-text);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
 }
 
-@utility font-display {
-  font-family: var(--font-display, Georgia, "Times New Roman", serif);
+.bento-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.opt-brand .opt {
-  color: #C9A96E;
-  font-weight: 800;
+.bento-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 0 0 1px var(--color-border-hover), 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #C9A96E 0%, #E8D0A0 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #A1A1AA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.card-hover {
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.card-hover:hover {
-  border-color: rgba(201, 169, 110, 0.3);
-  box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.12), 0 8px 32px rgba(0, 0, 0, 0.5);
-}
+/* Keep chat bubbles generic for now */
+.chat-bubble-user { background: #FFFFFF; color: #000000; }
+.chat-bubble-ai { background: #18181B; border: 1px solid rgba(255,255,255,0.1); }
+.chat-bubble-system { background: rgba(255,255,255,0.05); color: #A1A1AA; }
 
-.chat-bubble-user {
-  background: #C9A96E;
-  color: #0C0A07;
-}
-.chat-bubble-ai {
-  background: #1E1812;
-  border: 1px solid rgba(201, 169, 110, 0.12);
-}
-.chat-bubble-system {
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  color: #F59E0B;
-}
+.article-body h2 { font-weight: 700; margin: 2rem 0 1rem; color: #FFFFFF; }
+.article-body h3 { font-weight: 600; margin: 1.5rem 0 0.75rem; color: #FFFFFF; }
+.article-body p { color: #A1A1AA; line-height: 1.8; margin-bottom: 1.25rem; }
+.article-body ul { list-style: disc; padding-left: 1.5rem; color: #A1A1AA; margin-bottom: 1.25rem; }
+.article-body a { color: #FFFFFF; text-decoration: underline; text-underline-offset: 3px; }
+.article-body strong { color: #FFFFFF; font-weight: 600; }
 
-.article-body h2 {
-  font-family: var(--font-display, Georgia, serif);
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 2rem 0 1rem;
-  color: #EDE0CC;
-}
-.article-body h3 {
-  font-family: var(--font-display, Georgia, serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 1.5rem 0 0.75rem;
-  color: #EDE0CC;
-}
-.article-body p { color: #B8A68A; line-height: 1.8; margin-bottom: 1.25rem; }
-.article-body ul { list-style: disc; padding-left: 1.5rem; color: #B8A68A; margin-bottom: 1.25rem; }
-.article-body ul li { margin-bottom: 0.5rem; line-height: 1.7; }
-.article-body a { color: #C9A96E; text-decoration: underline; text-underline-offset: 3px; }
-.article-body strong { color: #EDE0CC; font-weight: 600; }
-.article-body blockquote {
-  border-left: 3px solid #C9A96E;
-  padding-left: 1.25rem;
-  margin: 1.5rem 0;
-  color: #9E8B71;
-  font-style: italic;
-}

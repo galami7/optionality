@@ -35,9 +35,9 @@ export default function WaitlistForm({ source = "landing_page" }: { source?: str
 
   if (state === "success") {
     return (
-      <div className="flex items-center justify-center gap-3 py-3 px-5 rounded-xl bg-[#C9A96E]/10 border border-[#C9A96E]/30 max-w-md mx-auto">
-        <span className="text-[#C9A96E] text-lg">✓</span>
-        <p className="text-[#C9A96E] text-sm font-medium">{message}</p>
+      <div className="flex items-center justify-center gap-3 py-3 px-5 rounded-xl bg-white/10 border border-white/30 max-w-md mx-auto">
+        <span className="text-white text-lg">✓</span>
+        <p className="text-white text-sm font-medium">{message}</p>
       </div>
     );
   }
@@ -51,12 +51,12 @@ export default function WaitlistForm({ source = "landing_page" }: { source?: str
           onChange={(e) => { setEmail(e.target.value); setState("idle"); }}
           placeholder="your@email.com"
           required
-          className="flex-1 px-4 py-3 rounded-xl bg-[#161109] border border-white/[0.12] text-[#EDE0CC] placeholder-[#504133] text-sm focus:outline-none focus:border-[#C9A96E]/50 focus:ring-1 focus:ring-[#C9A96E]/30"
+          className="flex-1 px-4 py-3 rounded-xl bg-black border border-white/10 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white/30 transition-all"
         />
         <button
           type="submit"
           disabled={state === "loading"}
-          className="px-6 py-3 rounded-xl bg-[#C9A96E] text-[#0C0A07] font-semibold text-sm hover:bg-[#D4B882] transition-colors whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+          className="px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm hover:scale-105 transition-transform whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
           {state === "loading" ? "Joining…" : "Join waitlist →"}
         </button>
