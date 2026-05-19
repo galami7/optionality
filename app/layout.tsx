@@ -48,6 +48,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-[#0C0A07] text-[#EDE0CC] antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "OPTionality",
+              url: "https://opt-ionality.com",
+              logo: "https://opt-ionality.com/favicon.ico",
+              description: "Helping F-1 students realize they have more paths than they think.",
+              founder: {
+                "@type": "Person",
+                name: "Guillaume"
+              }
+            })
+          }}
+        />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

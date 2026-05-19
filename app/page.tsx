@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import WaitlistForm from "@/components/waitlist-form";
+import { FadeIn } from "@/components/fade-in";
 
 export const metadata: Metadata = {
   title: "OPTionality — Helping F-1 students realize they have more paths than they think",
@@ -116,7 +117,7 @@ export default function HomePage() {
           style={{ background: "radial-gradient(ellipse, #C9A96E 0%, transparent 70%)" }}
         />
 
-        <div className="mx-auto max-w-4xl text-center relative">
+        <FadeIn className="mx-auto max-w-4xl text-center relative">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#C9A96E]/30 bg-[#C9A96E]/10 text-[#C9A96E] text-xs font-medium mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E] animate-pulse" />
@@ -157,31 +158,31 @@ export default function HomePage() {
           </div>
 
           {/* Wordmark — secondary */}
-          <p className="text-xs text-[#504133]">
+          <p className="text-xs text-[#6E5E48]">
             <span className="opt-brand text-[#6E5E48]">
               <span className="opt">OPT</span><span>ionality</span>
             </span>
             {" "}· Free to use · No guaranteed placement · Always talk to your DSO first
           </p>
-        </div>
+        </FadeIn>
       </section>
 
       {/* ── Stats (with source citations) ────────────────────────────── */}
       <section className="border-y border-white/[0.08] bg-[#161109] px-4 sm:px-6 lg:px-8 py-12">
         <div className="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map(({ value, label, sub, href }) => (
-            <div key={label} className="text-center">
+          {stats.map(({ value, label, sub, href }, index) => (
+            <FadeIn key={label} delay={index * 0.1} className="text-center">
               <p className="text-3xl md:text-4xl font-black text-gradient mb-1">{value}</p>
               <p className="text-sm font-semibold text-[#EDE0CC] mb-0.5">{label}</p>
               <a
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#504133] hover:text-[#C9A96E] transition-colors underline underline-offset-2"
+                className="text-xs text-[#6E5E48] hover:text-[#C9A96E] transition-colors underline underline-offset-2"
               >
                 {sub} ↗
               </a>
-            </div>
+            </FadeIn>
           ))}
         </div>
       </section>
@@ -218,7 +219,7 @@ export default function HomePage() {
                   <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                   Guillaume on LinkedIn
                 </a>
-                <span className="text-xs text-[#504133]">Kellogg MBA &apos;26 · On OPT · Chicago, IL</span>
+                <span className="text-xs text-[#6E5E48]">Kellogg MBA &apos;26 · On OPT · Chicago, IL</span>
               </div>
             </div>
           </div>
@@ -235,12 +236,12 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {painPoints.map(({ icon, title, body }) => (
-              <div key={title} className="card-hover rounded-2xl border border-white/[0.08] bg-[#161109] p-7">
+            {painPoints.map(({ icon, title, body }, index) => (
+              <FadeIn key={title} delay={index * 0.1} className="card-hover rounded-2xl border border-white/[0.08] bg-[#161109] p-7">
                 <span className="text-3xl mb-4 block">{icon}</span>
                 <h3 className="text-lg font-bold text-[#EDE0CC] mb-2">{title}</h3>
                 <p className="text-sm text-[#9E8B71] leading-relaxed">{body}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -254,9 +255,10 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#EDE0CC]">Four ways we help you build.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {offerings.map(({ tier, title, price, timeline, description, features, cta, href, highlight }) => (
-              <div
+            {offerings.map(({ tier, title, price, timeline, description, features, cta, href, highlight }, index) => (
+              <FadeIn
                 key={tier}
+                delay={index * 0.1}
                 className={`card-hover rounded-2xl border p-7 relative ${
                   highlight ? "border-[#C9A96E]/40 bg-[#C9A96E]/5" : "border-white/[0.08] bg-[#1E1812]"
                 }`}
@@ -292,7 +294,7 @@ export default function HomePage() {
                 >
                   {cta}
                 </Link>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -311,7 +313,7 @@ export default function HomePage() {
               USCIS deadlines, 90-day unemployment clock, STEM extension dates.
               Color-coded by urgency. Takes 3 minutes.
             </p>
-            <p className="text-xs text-[#504133] mb-8">
+            <p className="text-xs text-[#6E5E48] mb-8">
               Results are based on standard USCIS rules. Always confirm with your DSO.
             </p>
             <Link
@@ -352,11 +354,11 @@ export default function HomePage() {
           <p className="text-[#9E8B71] mb-2">
             Be first when the community opens June 15. Refer 3 friends → get a free 1-on-1 with Guillaume.
           </p>
-          <p className="text-xs text-[#504133] mb-8">
+          <p className="text-xs text-[#6E5E48] mb-8">
             We never share your information with employers, USCIS, or your school.
           </p>
           <WaitlistForm />
-          <p className="text-xs text-[#504133] mt-3">
+          <p className="text-xs text-[#6E5E48] mt-3">
             No spam. Unsubscribe anytime. Read our{" "}
             <Link href="/privacy" className="underline hover:text-[#9E8B71] transition-colors">
               privacy policy

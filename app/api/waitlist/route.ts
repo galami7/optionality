@@ -1,7 +1,32 @@
 import { NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase";
 
+// Basic in-memory rate limiting
+// Map of IP to request count and window start timestamp
+const rateLimit = new Map<string, { count: number; timestamp: number }>();
+
 export async function POST(request: Request) {
+  const ip = request.headers.get("x-forwarded-for") ?? "127.0.0.1";
+  const now = Date.now();
+  const windowMs = 60 * 1000; // 1 minute
+
+  const record = rateLimit.get(ip);
+  if (record) {
+    if (now - record.timestamp < windowMs) {
+      if (record.count >= 5) {
+        return NextResponse.json(
+          { error: "Too many requests. Please try again in a minute." },
+          { status: 429 }
+        );
+      }
+      record.count += 1;
+    } else {
+      rateLimit.set(ip, { count: 1, timestamp: now });
+    }
+  } else {
+    rateLimit.set(ip, { count: 1, timestamp: now });
+  }
+
   const body = await request.json().catch(() => null);
   const email: string = body?.email?.trim().toLowerCase() ?? "";
 
